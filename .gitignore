@@ -1,0 +1,22 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+
+# IDE
+.idea/
+
+# Logs
+*.log
+
+# Test results
+TestResults/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example

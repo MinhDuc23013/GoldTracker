@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36511.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoldTrackerHost", "GoldTrackerHost\GoldTrackerHost.csproj", "{47EF6475-673F-439D-936B-17547FCD5B48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoldTracker.Domain", "GoldTracker.Domain\GoldTracker.Domain.csproj", "{1C8DC8A4-7080-4066-87E6-65173CB0A5E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoldTracker.Application", "GoldTracker.Application\GoldTracker.Application.csproj", "{AD8C00EA-491F-44AB-921C-EE3AAA98E6D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoldTracker.Infrastructure", "GoldTracker.Infrastructure\GoldTracker.Infrastructure.csproj", "{35ADAEDE-BA79-4547-A984-8544C9465467}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoldTracker.Worker", "GoldTracker.Worker\GoldTracker.Worker.csproj", "{1DCE4A71-D06B-4FDA-91D0-1313B3DA578E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoldTracker.Shared", "GoldTracker.Shared\GoldTracker.Shared.csproj", "{A2533EDB-73BB-4561-8FB9-6BED849DF46F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47EF6475-673F-439D-936B-17547FCD5B48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47EF6475-673F-439D-936B-17547FCD5B48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47EF6475-673F-439D-936B-17547FCD5B48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47EF6475-673F-439D-936B-17547FCD5B48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C8DC8A4-7080-4066-87E6-65173CB0A5E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C8DC8A4-7080-4066-87E6-65173CB0A5E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C8DC8A4-7080-4066-87E6-65173CB0A5E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C8DC8A4-7080-4066-87E6-65173CB0A5E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD8C00EA-491F-44AB-921C-EE3AAA98E6D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD8C00EA-491F-44AB-921C-EE3AAA98E6D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD8C00EA-491F-44AB-921C-EE3AAA98E6D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD8C00EA-491F-44AB-921C-EE3AAA98E6D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35ADAEDE-BA79-4547-A984-8544C9465467}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35ADAEDE-BA79-4547-A984-8544C9465467}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35ADAEDE-BA79-4547-A984-8544C9465467}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35ADAEDE-BA79-4547-A984-8544C9465467}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DCE4A71-D06B-4FDA-91D0-1313B3DA578E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DCE4A71-D06B-4FDA-91D0-1313B3DA578E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DCE4A71-D06B-4FDA-91D0-1313B3DA578E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DCE4A71-D06B-4FDA-91D0-1313B3DA578E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2533EDB-73BB-4561-8FB9-6BED849DF46F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2533EDB-73BB-4561-8FB9-6BED849DF46F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2533EDB-73BB-4561-8FB9-6BED849DF46F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2533EDB-73BB-4561-8FB9-6BED849DF46F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02062BC4-9D01-4A6C-82DF-09CED47745D3}
+	EndGlobalSection
+EndGlobal
