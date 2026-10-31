@@ -2,6 +2,7 @@
 stages:
   - build
   - test
+  - docker
 
 variables:
   SOLUTION_FILE: "GoldTracker.sln"
@@ -62,3 +63,29 @@ unit-test-job:
     paths:
       - "**/TestResults/*.trx"
     expire_in: 1 week
+
+# =========================
+# STAGE 3: BUILD & PUSH DOCKER IMAGE
+# =========================
+docker-build-job:
+  stage: docker
+
+  image: docker:27
+
+  tags:
+    - docker-gold-track
+
+  needs:
+    - job: unit-test-job
+
+  rules:
+    - if: '$CI_COMMIT_BRANCH =~ /^(dev|uat|prod|main)$/'
+
+  variables:
+    IMAGE_NAME: "$CI_REGISTRY_IMAGE/goldtracker-host"
+
+  script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
+    - docker build -f GoldTrackerHost/Dockerfile -t "$IMAGE_NAME:$CI_COMMIT_SHORT_SHA" -t "$IMAGE_NAME:$CI_COMMIT_REF_SLUG" .
+    - docker push "$IMAGE_NAME:$CI_COMMIT_SHORT_SHA"
+    - docker push "$IMAGE_NAME:$CI_COMMIT_REF_SLUG"
