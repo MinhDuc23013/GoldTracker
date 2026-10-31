@@ -1,0 +1,64 @@
+
+stages:
+  - build
+  - test
+
+variables:
+  SOLUTION_FILE: "GoldTracker.sln"
+  BUILD_CONFIGURATION: "Release"
+  DOTNET_CLI_TELEMETRY_OPTOUT: "1"
+  DOTNET_NOLOGO: "true"
+  NUGET_PACKAGES: "$CI_PROJECT_DIR/.nuget/packages"
+
+# Cache NuGet để giảm thời gian Restore
+cache:
+  key: "nuget-$CI_COMMIT_REF_SLUG"
+  paths:
+    - .nuget/packages/
+
+# =========================
+# STAGE 1: BUILD
+# =========================
+build-job:
+  stage: build
+
+  image: mcr.microsoft.com/dotnet/sdk:8.0
+
+  tags:
+    - goldtracker
+
+  script:
+    - dotnet --info
+    - dotnet restore "$SOLUTION_FILE"
+    - dotnet build "$SOLUTION_FILE" --configuration $BUILD_CONFIGURATION --no-restore
+
+  # Chuyển kết quả build sang Job Test
+  artifacts:
+    paths:
+      - "**/bin/Release/"
+      - "**/obj/Release/"
+    expire_in: 1 hour
+
+# =========================
+# STAGE 2: UNIT TEST
+# =========================
+unit-test-job:
+  stage: test
+
+  image: mcr.microsoft.com/dotnet/sdk:8.0
+
+  tags:
+    - goldtracker
+
+  needs:
+    - job: build-job
+      artifacts: true
+
+  script:
+    - dotnet test "$SOLUTION_FILE" --configuration $BUILD_CONFIGURATION --no-build --no-restore --logger "trx;LogFileName=test-results.trx"
+
+  artifacts:
+    when: always
+    paths:
+      - "**/TestResults/*.trx"
+    expire_in: 1 week

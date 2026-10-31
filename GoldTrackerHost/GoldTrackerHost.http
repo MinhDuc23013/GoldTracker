@@ -5,6 +5,11 @@ Accept: text/plain
 
 ###
 
+GET {{GoldTrackerHost_HostAddress}}/api/ping
+Accept: application/json
+
+###
+
 GET {{GoldTrackerHost_HostAddress}}/todos/
 Accept: application/json
 
